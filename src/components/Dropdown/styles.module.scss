@@ -1,0 +1,45 @@
+.dropdown {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: var(--color-06);
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  width: 200px;
+
+  padding: 8px;
+  z-index: 10;
+
+  @media (width <= 375px) {
+    width: 160px;
+    right: -15px;
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: Manrope;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: var(--color-01);
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
+}

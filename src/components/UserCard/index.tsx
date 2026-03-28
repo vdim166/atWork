@@ -4,6 +4,7 @@ import { BurgerMenu } from "../svgs/BurgerMenu";
 import styles from "./styles.module.scss";
 import useUsersStore from "../../stores/useUsersStore";
 import { useNavigate } from "react-router";
+import { Dropdown } from "../Dropdown";
 
 type UserCardProps = {
   user: User;
@@ -56,12 +57,15 @@ export const UserCard = ({ user, isArchive = false }: UserCardProps) => {
             {user.name}
           </p>
           <div className={styles.menuContainer} ref={dropdownRef}>
-            <div onClick={toggleDropdown} className={styles.burgerButton}>
+            <div
+              onClick={toggleDropdown}
+              className={`${styles.burgerButton} ${isDropdownOpen ? styles.open : ""}`}
+            >
               <BurgerMenu />
             </div>
 
             {isDropdownOpen && (
-              <div className={styles.dropdown}>
+              <Dropdown>
                 {!isArchive ? (
                   <>
                     <button onClick={() => goToCard(user.id)}>
@@ -77,7 +81,7 @@ export const UserCard = ({ user, isArchive = false }: UserCardProps) => {
                     Активировать
                   </button>
                 )}
-              </div>
+              </Dropdown>
             )}
           </div>
         </div>

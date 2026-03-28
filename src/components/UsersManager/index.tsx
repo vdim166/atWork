@@ -1,12 +1,13 @@
 import { useUsers } from "../../hooks/useUsers";
 import { Line } from "../Line";
+import { Loader } from "../svgs/Loader";
 import { UserCard } from "../UserCard";
 import styles from "./styles.module.scss";
 
 export const UsersManager = () => {
   const { users, isLoading, archivedUsers } = useUsers();
 
-  if (isLoading) return <p>Загрузка...</p>;
+  if (isLoading) return <Loader />;
 
   return (
     <div>

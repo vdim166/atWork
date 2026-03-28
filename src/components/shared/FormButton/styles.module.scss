@@ -1,0 +1,31 @@
+.btn {
+  background-color: var(--color-01);
+  padding-right: 42px;
+  padding-left: 42px;
+  border-radius: 50px;
+  height: 46px;
+
+  color: var(--color-06);
+  border: none;
+  font-family: Manrope;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+
+  cursor: pointer;
+
+  @media (width <= 375px) {
+    height: 44px;
+  }
+
+  &:hover {
+    @media (width > 375px) {
+      background-color: var(--color-05);
+      color: var(--color-02);
+    }
+  }
+}

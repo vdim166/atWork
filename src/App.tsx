@@ -4,6 +4,7 @@ import { Navbar } from "./components/Navbar";
 import "./styles/globals.scss";
 import { DashboardPage } from "./pages/DashboardPage";
 import styles from "./App.module.scss";
+import { Popup } from "./components/Popup";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
 
         <Route path="*" element={<h2>Страница не найдена (404)</h2>} />
       </Routes>
+      <Popup />
     </div>
   );
 }

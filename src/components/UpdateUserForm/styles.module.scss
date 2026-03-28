@@ -1,0 +1,19 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.submitBtnContainer {
+  @media (width <= 1000px) {
+    button {
+      width: 100%;
+    }
+  }
+}

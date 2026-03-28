@@ -10,6 +10,8 @@ interface UsersState {
   unarchiveUser: (id: number) => void;
 
   archivedUsers: User[];
+
+  updateUser: (id: number, updatedData: Partial<User>) => void;
 }
 
 const useUsersStore = create<UsersState>((set) => ({
@@ -45,6 +47,13 @@ const useUsersStore = create<UsersState>((set) => ({
   deleteUser: (id) =>
     set((state) => ({
       users: state.users.filter((user) => user.id !== id),
+    })),
+
+  updateUser: (id, updatedData) =>
+    set((state) => ({
+      users: state.users.map((user) =>
+        user.id === id ? { ...user, ...updatedData } : user,
+      ),
     })),
 }));
 

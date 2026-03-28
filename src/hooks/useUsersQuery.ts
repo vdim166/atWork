@@ -15,6 +15,20 @@ export interface User {
   avatar: string;
 }
 
+export interface userFromApi {
+  id: number;
+  name: string;
+  username: string;
+  email: string;
+  address: {
+    city: string;
+  };
+  phone: string;
+  company: {
+    name: string;
+  };
+}
+
 export const useUsersQuery = () => {
   return useQuery({
     queryKey: ["users"],
@@ -24,7 +38,7 @@ export const useUsersQuery = () => {
 
       const data = await res.json();
       const result = data.map(
-        (userFromApi: any): User => ({
+        (userFromApi: userFromApi): User => ({
           id: userFromApi.id,
           name: userFromApi.name,
           username: userFromApi.username,
@@ -38,6 +52,9 @@ export const useUsersQuery = () => {
 
       return result;
     },
-    staleTime: 5 * 60 * 1000,
+    staleTime: 10 * 60 * 1000,
+    gcTime: 15 * 60 * 1000,
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
   });
 };

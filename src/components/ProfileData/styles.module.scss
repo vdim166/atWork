@@ -1,0 +1,21 @@
+.profileData {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title {
+  font-family: Manrope;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: var(--color-01);
+}
