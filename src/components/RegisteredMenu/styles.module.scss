@@ -1,0 +1,42 @@
+.main {
+  display: flex;
+
+  justify-content: center;
+  align-content: center;
+
+  gap: 20px;
+}
+
+.userContainer {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  gap: 8px;
+}
+
+.toolsContainer {
+  display: flex;
+
+  gap: 4px;
+
+  @media (width <= 600px) {
+    display: none;
+  }
+}
+
+.userImage {
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  object-fit: cover;
+}
+
+.userName {
+  font-family: Manrope;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
