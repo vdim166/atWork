@@ -13,7 +13,7 @@ interface PopupActions {
 
 type PopupStore = PopupState & PopupActions;
 
-export const usePopupStore = create<PopupStore>((set, get) => ({
+export const usePopupStore = create<PopupStore>((set) => ({
   isOpen: false,
   content: null,
   title: undefined,
